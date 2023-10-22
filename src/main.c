@@ -4,17 +4,11 @@
 #include <SDL2/SDL.h>
 
 // Our own library's
-#include "main.c"
+#include "main.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-
-bool init();
-
-bool loadMedia();
-
-void close();
 
 bool init()
 {
@@ -41,6 +35,22 @@ bool init()
             //Get window surface
             gScreenSurface = SDL_GetWindowSurface( gWindow );
         }
+    }
+
+    return success;
+}
+
+bool loadMedia()
+{
+    //Loading success flag
+    bool success = true;
+
+    //Load splash image
+    gHelloWorld = SDL_LoadBMP( "02_getting_an_image_on_the_screen/hello_world.bmp" );
+    if( gHelloWorld == NULL )
+    {
+        printf( "Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError() );
+        success = false;
     }
 
     return success;

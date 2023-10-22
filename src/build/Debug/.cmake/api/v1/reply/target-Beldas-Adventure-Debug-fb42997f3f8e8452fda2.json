@@ -56,7 +56,6 @@
 			[
 				{
 					"backtrace" : 3,
-					"isSystem" : true,
 					"path" : "/usr/include/SDL2"
 				}
 			],
@@ -82,12 +81,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/libSDL2main.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/usr/lib/libSDL2-2.0.so.0.2800.4",
+				"fragment" : "-L/usr/lib/x86_64-linux-gnu  -lSDL2",
 				"role" : "libraries"
 			}
 		],
